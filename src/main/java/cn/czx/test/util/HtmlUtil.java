@@ -1,9 +1,12 @@
 package cn.czx.test.util;
 
+import org.fit.cssbox.demo.ImageRenderer;
+
+
 import java.awt.*;
 import java.io.File;
 import java.io.FileOutputStream;
-import org.fit.cssbox.demo.ImageRenderer;
+
 /**
  * Created by czx on 2016/12/20.
  */
@@ -14,9 +17,7 @@ public class HtmlUtil {
      * @param saveFilePath
      * @return
      */
-    public static boolean urlToSvg(String url,String saveFilePath){
-       // Assert.hasText(url, "param[url] could not be null");
-       // Assert.hasText(saveFilePath, "param[saveFilePath] could not be null");
+    public static boolean HTML2SVG(String url,String saveFilePath){
         if(StringUtil.isEmpty(url)){
             return false;
         }
@@ -25,7 +26,6 @@ public class HtmlUtil {
         }
         try {
             ImageRenderer render = new ImageRenderer();
-
             FileOutputStream out = new FileOutputStream(new File(saveFilePath));
             render.setWindowSize(new Dimension(2500, 800), true);
             render.renderURL(url, out, ImageRenderer.Type.SVG);
@@ -39,8 +39,5 @@ public class HtmlUtil {
         return false;
     }
 
-    public static void main(String[] args){
-        HtmlUtil.urlToSvg("https://www.zhihu.com/question/28914581","D:\\QQDownload\\pdf\\demo.svg");
 
-    }
 }
