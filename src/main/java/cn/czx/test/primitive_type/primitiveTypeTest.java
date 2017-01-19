@@ -43,7 +43,7 @@ public class primitiveTypeTest {
             System.out.println("this result is not number");
         }else if(Double.isInfinite(0.1/0)){
             System.out.println("this result is infinity");
-        }else if(Double.isFinite(0.1/0)){
+        }else {
             System.out.println("this result is finity");
         }
         System.out.println(2.0f-1.1f);//使用单精度没问题
